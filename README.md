@@ -36,8 +36,8 @@ XSS_ML/
 │   ├── NaiveBayes.py
 │   ├── SVM.py
 │   ├── KNN.py
-│   ├── exportToJS_svm_model.py
-│   └── validate_python_js_parity.py
+│   └── exportToJS_svm_model.py
+│  
 ├── test-web/
 │   ├── benign.html
 │   ├── reflected.html
