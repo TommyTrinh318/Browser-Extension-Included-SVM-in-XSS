@@ -20,6 +20,7 @@ Hệ thống tập trung vào hai dạng tấn công:
 
 ## Kiến trúc thư mục
 
+```text
 XSS_ML/
 ├── extension/
 │   ├── manifest.json
@@ -42,6 +43,7 @@ XSS_ML/
 │   ├── reflected.html
 │   └── stored.html
 └── README.md
+```
 
 ## Mô hình học máy
 
