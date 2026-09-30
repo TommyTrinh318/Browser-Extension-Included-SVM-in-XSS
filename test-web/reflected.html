@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reflected XSS Test Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro">
+    <h1>Reflected XSS Test Page</h1>
+    <p>Trang mô phỏng dữ liệu từ tham số URL được phản hồi vào nội dung trang.</p>
+    <a class="button" href="index.html">Quay lại trang kiểm thử</a>
+  </div>
+  <h2>Nhập dữ liệu kiểm thử</h2>
+  <form id="reflected-form">
+    <label for="reflected-input">Giá trị tham số q:</label><br>
+    <textarea id="reflected-input" rows="4" style="width:100%;margin:8px 0;padding:8px;"></textarea><br>
+    <button class="button" type="submit">Gửi dữ liệu vào URL</button>
+  </form>
+  <h2>Giá trị tham số q</h2>
+  <div id="reflected-value" class="status">Đang đọc tham số URL...</div>
+  <script>
+    const query = new URLSearchParams(location.search);
+    const value = query.get("q") || "Không có tham số q";
+    // Cố ý dùng innerHTML trong fixture cục bộ để mô phỏng điểm phản hồi dữ liệu.
+    document.getElementById("reflected-value").innerHTML = value;
+    document.getElementById("reflected-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const input = document.getElementById("reflected-input").value;
+      location.href = `reflected.html?q=${encodeURIComponent(input)}`;
+    });
+  </script>
+</body>
+</html>

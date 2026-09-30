@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stored XSS Test Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro">
+    <h1>Stored XSS Test Page</h1>
+    <p>Payload được thêm vào DOM sau khi trang tải để kiểm tra khả năng giám sát thay đổi DOM.</p>
+    <a class="button" href="index.html">Quay lại trang kiểm thử</a>
+  </div>
+  <h2>Nhập nội dung kiểm thử</h2>
+  <form id="stored-form">
+    <label for="stored-input">Nội dung được mô phỏng là dữ liệu đã lưu:</label><br>
+    <textarea id="stored-input" rows="4" style="width:100%;margin:8px 0;padding:8px;"></textarea><br>
+    <button class="button" type="submit">Thêm nội dung vào DOM</button>
+  </form>
+  <div id="stored-status" class="status">Chưa có nội dung được thêm vào DOM.</div>
+  <div id="stored-content"></div>
+  <script>
+    document.getElementById("stored-form").addEventListener("submit", (event) => {
+      event.preventDefault();
+      const input = document.getElementById("stored-input").value;
+      const content = document.getElementById("stored-content");
+      content.innerHTML = input;
+      document.getElementById("stored-status").textContent = "Nội dung người dùng nhập đã được thêm vào DOM.";
+    });
+  </script>
+</body>
+</html>

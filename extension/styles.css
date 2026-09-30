@@ -1,0 +1,24 @@
+:root { color-scheme: light; font-family: Inter, "Segoe UI", Arial, sans-serif; }
+* { box-sizing: border-box; }
+body { margin: 0; width: 360px; background: #f6f8fb; color: #172033; }
+.panel { padding: 20px; }
+header { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+.logo { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 12px; background: #155eef; color: white; font-weight: 800; }
+h1 { margin: 0; font-size: 18px; }
+header p, .status p { margin: 3px 0 0; color: #667085; font-size: 12px; }
+.status { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border: 1px solid; border-radius: 12px; background: white; }
+.status.safe { border-color: #abefc6; background: #ecfdf3; }
+.status.danger { border-color: #fecdca; background: #fef3f2; }
+.status.idle { border-color: #d0d5dd; }
+.dot { width: 10px; height: 10px; margin-top: 4px; border-radius: 50%; background: #12b76a; }
+.danger .dot { background: #f04438; } .idle .dot { background: #98a2b3; }
+.metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0 16px; }
+.metrics div { padding: 10px 6px; border: 1px solid #e4e7ec; border-radius: 10px; background: white; text-align: center; }
+.metrics span { display: block; font-weight: 750; font-size: 17px; } .metrics small { color: #667085; font-size: 10px; }
+.toggle { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; font-size: 13px; }
+.toggle input { display: none; }
+.toggle i { position: relative; width: 38px; height: 22px; border-radius: 11px; background: #d0d5dd; transition: .2s; }
+.toggle i::after { content: ""; position: absolute; width: 16px; height: 16px; top: 3px; left: 3px; border-radius: 50%; background: white; transition: .2s; box-shadow: 0 1px 3px #0003; }
+.toggle input:checked + i { background: #155eef; } .toggle input:checked + i::after { transform: translateX(16px); }
+button { width: 100%; margin-top: 12px; padding: 11px; border: 0; border-radius: 9px; background: #155eef; color: white; font-weight: 700; cursor: pointer; }
+.footnote { margin: 13px 0 0; color: #667085; font-size: 10px; text-align: center; }

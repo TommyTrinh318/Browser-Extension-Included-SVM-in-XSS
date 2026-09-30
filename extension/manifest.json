@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "XSS Guard ML",
+  "version": "1.0.0",
+  "description": "Phat hien va ngan chan Reflected XSS và Stored XSS su dung mo hinh TF-IDF và SVM.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "XSS Guard ML", "default_popup": "popup.html" },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["model/model-data.js", "classifier.js", "content.js"],
+    "run_at": "document_start",
+    "all_frames": false
+  }]
+}

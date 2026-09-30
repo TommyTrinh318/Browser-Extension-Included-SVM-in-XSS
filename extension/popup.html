@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="vi">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>XSS Guard ML</title><link rel="stylesheet" href="styles.css"></head>
+<body><main class="panel">
+  <header><div class="logo">XG</div><div><h1>XSS Guard ML</h1><p>TF-IDF và Linear SVM</p></div></header>
+  <section id="statusCard" class="status safe"><span class="dot"></span><div><strong id="statusTitle">Đang kiểm tra</strong><p id="statusText">Đọc trạng thái trang hiện tại...</p></div></section>
+  <section class="metrics"><div><span id="scannedCount">0</span><small>Mẫu đã quét</small></div><div><span id="blockedCount">0</span><small>Đã vô hiệu hóa</small></div><div><span id="riskValue">0%</span><small>Rủi ro cao nhất</small></div></section>
+  <label class="toggle"><span>Bật bảo vệ</span><input id="enabled" type="checkbox"><i></i></label>
+  <label class="toggle"><span>Tự động ngăn chặn</span><input id="blocking" type="checkbox"><i></i></label>
+  <button id="scanButton" type="button">Quét lại trang</button>
+</main><script src="popup.js"></script></body>
+</html>

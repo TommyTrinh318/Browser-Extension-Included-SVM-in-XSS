@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>XSS Extension Test Web</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="intro">
+    <h1>Trang kiểm thử XSS Extension</h1>
+    <p>Chọn một kịch bản bên dưới để kiểm tra Extension.</p>
+    <p>Trước khi kiểm thử, hãy BẬT extension lên</p>
+  </div>
+
+  <div class="cases">
+    <section class="case safe">
+      <h2>Benign</h2>
+      <p>Trang hợp lệ, không chứa thẻ hoặc thuộc tính có khả năng thực thi JavaScript.</p>
+      <a class="button" href="benign.html">Mở trang Benign</a>
+    </section>
+
+    <section class="case reflected">
+      <h2>Reflected XSS</h2>
+      <p>Payload được đưa vào tham số <code>q</code> của URL và dùng để kiểm tra cơ chế chặn.</p>
+      <a class="button" href="reflected.html?q=welcome">Mở URL có payload</a>
+    </section>
+
+    <section class="case stored">
+      <h2>Stored XSS</h2>
+      <p>Payload được thêm vào DOM sau khi tải trang để kiểm tra <code>MutationObserver</code>.</p>
+      <a class="button" href="stored.html">Mở trang Stored</a>
+    </section>
+  </div>
+
+  <div class="status">
+    <strong>Gợi ý:</strong> Sau mỗi kịch bản, bấm biểu tượng Extension để xem trạng thái, số mẫu đã quét và số phần tử bị vô hiệu hóa.
+  </div>
+</body>
+</html>
